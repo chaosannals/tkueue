@@ -1,0 +1,19 @@
+###
+# @name debugEncrypt
+POST http://127.0.0.1:51580/debug/encrypt HTTP/1.1
+Content-Type: application/json
+
+{
+    "key": "123456",
+    "data": "qwertyuiop"
+}
+
+###
+# @name debugDecrypt
+POST http://127.0.0.1:51580/debug/decrypt HTTP/1.1
+Content-Type: application/json
+
+{
+    "key": "123456",
+    "data": "{{debugEncrypt.response.body.result}}"
+}
